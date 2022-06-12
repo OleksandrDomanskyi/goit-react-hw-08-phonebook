@@ -11,6 +11,6 @@ export const items = [
         id: nanoid(),
         to: "/phonebook",
         text: "Phonebook",
-        private: false
+        private: true
     }
 ]

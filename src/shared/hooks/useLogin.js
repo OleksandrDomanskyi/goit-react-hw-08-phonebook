@@ -1,6 +1,6 @@
 import { useSelector, shallowEqual } from "react-redux";
 
-import { isUserLogin } from "redux/users/users-selectors";
+import { isUserLogin } from "redux/auth/auth-selectors";
 
 const useLogin = () => {
     const isLogin = useSelector(isUserLogin, shallowEqual);

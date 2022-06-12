@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import * as services from '../../shared/services/users';
+import * as services from '../../shared/services/auth';
 
 export const signup = createAsyncThunk(
-    "user/signup",
+    "auth/signup",
     async (data, { rejectWithValue }) => {
         try {
             const user = await services.signup(data);
@@ -15,7 +15,7 @@ export const signup = createAsyncThunk(
 );
 
 export const login = createAsyncThunk(
-    "user/login",
+    "auth/login",
     async (data, { rejectWithValue }) => {
         try {
             const user = await services.login(data);
@@ -27,13 +27,13 @@ export const login = createAsyncThunk(
 );
 
 export const getCurrentUser = createAsyncThunk(
-    "user/current",
+    "auth/current",
     async (_, { rejectWithValue, getState }) => {
         try {
-            const { user } = getState();
-            const { token } = user;
-            const currentUser = await services.getCurrent(token);
-            return currentUser;
+            const { auth } = getState();
+            const { token } = auth;
+            const user = await services.getCurrent(token);
+            return user;
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -41,7 +41,7 @@ export const getCurrentUser = createAsyncThunk(
 );
 
 export const logout = createAsyncThunk(
-    "user/logout",
+    "auth/logout",
     async (_, { rejectWithValue }) => {
         try {
             const user = await services.logout();

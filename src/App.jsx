@@ -5,7 +5,7 @@ import Header from "components/Header";
 
 import MyRoutes from "Routes";
 
-import { getCurrentUser } from "redux/users/users-operations";
+import { getCurrentUser } from "redux/auth/auth-operations";
 
 const App = () => {
 

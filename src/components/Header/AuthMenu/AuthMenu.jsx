@@ -13,6 +13,7 @@ const AuthMenu = () => {
             <li>
                 <NavLink to="/login" className={getActiveLink}>Login</NavLink>
             </li>
+            
             <li>
                 <NavLink to="/register" className={getActiveLink}>Register</NavLink>
             </li>

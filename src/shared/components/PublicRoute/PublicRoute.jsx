@@ -7,7 +7,7 @@ const PublicRoute = () => {
     const isLogin = useLogin();
 
     if (isLogin) {
-        return <Navigate replace to="/phonebook"/>
+        return <Navigate replace to="/phonebook" />
     }
     return <Outlet />
 };

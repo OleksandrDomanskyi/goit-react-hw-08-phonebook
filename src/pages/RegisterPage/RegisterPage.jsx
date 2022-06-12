@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import RegisterForm from "components/RegisterForm";
 
-import { signup } from "redux/users/users-operations";
+import { signup } from "redux/auth/auth-operations";
 import useLogin from "shared/hooks/useLogin";
 
 // import styles from "./register-page.module.scss";
@@ -29,7 +29,7 @@ const RegisterPage = () => {
     return (
         <div>
             <h2>Register Page</h2>
-            <RegisterForm onSubmit={registerUser}/>
+            <RegisterForm onSubmit={registerUser} />
         </div>
     )
 };
