@@ -38,7 +38,7 @@ const authSlice = createSlice({
         [getCurrentUser.fulfilled]: (store, { payload }) => {
             store.loading = false;
             store.isLogin = true;
-            store.user = payload.user
+            store.user = payload.name
         },
         [getCurrentUser.rejected]: (store, { payload }) => {
             store.loading = false;

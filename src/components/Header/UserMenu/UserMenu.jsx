@@ -9,7 +9,7 @@ import { getUser } from 'redux/auth/auth-selectors';
 
 const UserMenu = () => {
 
-    const {email} = useSelector(getUser, shallowEqual);
+    const {name} = useSelector(getUser, shallowEqual);
     const dispatch = useDispatch();
 
     const logoutUser = () => {
@@ -18,7 +18,7 @@ const UserMenu = () => {
     
     return (
         <div>
-            {email} | <button onClick={logoutUser}>Logout</button>
+            {name} | <button onClick={logoutUser}>Logout</button>
         </div>
     )
 };
